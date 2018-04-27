@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    function getByClass(oParent,sClass){
+        var aResult=[];
+        var oEle=oParent.getElementsByTagName('*');
+        for (var i=0;i<oEle.length;i++){
+            if(oEle[i].className==sClass){
+                aResult.push(oEle[i]);        //push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+            }
+        }
+    return aResult;
+    }
+    window.onload=function (){
+        var oUl=document.getElementById('ul1');
+        var aBox=getByClass(oUl,'box');
+        for (var i=0;i<aBox.length;i++){
+            aBox[i].style.background='red';
+        }
+
+
+    }
+</script>
+<body>
+<ul id="ul1">
+    <li class="box"></li>
+    <li></li>
+    <li class="box"></li>
+    <li></li>
+    <li class="box"></li>
+    <li></li>
+</ul>
+</body>
+</html>
